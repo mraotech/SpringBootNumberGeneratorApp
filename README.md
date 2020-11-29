@@ -1,14 +1,37 @@
 # SpringBootNumberGeneratorApp
 Spring boot application that generates a sequence of numbers in the decreasing order till 0. Simulate that the function to generate a number takes a random time – say between 10 to 30 seconds. Inputs: step, goal.
+The following APIs are supported:
+  1. POST /api/bulkGenerate
+  2. POST /api/generate
+  3. GET /api/tasks/{UUID of the task}?action=get_numlist
+  4. GET /api/tasks/{UUID of the task}/status
 
-## Usage
+Along with this, project supports the following:
+  1. Validation of Requests.
+  2. JUNIT Tests with report generation capabilities.
+  3. Configurable Threading options.
+  4. Swagger Documentation and UI.
 
 
-## Swagger
+## Usage and Swagger
+1. Checkout code, go to the main project directory and build using the following command:
+mvn clean install -Dmaven.test.skip=true
+
+2. Once build is successful, the Spring boot app can be run using the following command:
+java -jar target\numbergenerator-0.0.1-SNAPSHOT.jar
+
+3. Once the Embedded Tomcat and the application starts, the swagger UI can be accessed here:
+http://localhost:8080/swagger-ui/index.html#/
+
+4. APIs also will be accessible.
 
 
 ## Running Tests
-Test Cases Covered:
+
+To run JUNIT tests, under the main project directory, run the following command. This will generate reports under 
+mvn surefire-report:report
+
+Following test Cases are covered both manually as well as part of unit tests:
 1. GET Status with a wrong UUID
 2. GET Result with a wrong UUID
 3. POST generate with missing step input
@@ -30,5 +53,10 @@ Test Cases Covered:
 19. GET Status with UUID returned from #19. Expect IN_PROGRESS first and then wait till SUCCESS
 20. GET Result with UUID and Request Param. Match the data obtained
 
+## Contributing
+NONE
+
+## License
+NONE
 
 
