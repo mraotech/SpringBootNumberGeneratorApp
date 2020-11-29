@@ -15,21 +15,29 @@ Along with this, project supports the following:
 
 ## Usage and Swagger
 1. Checkout code, go to the main project directory and build using the following command:
+```bash
 mvn clean install -Dmaven.test.skip=true
+```
 
 2. Once build is successful, the Spring boot app can be run using the following command:
+```bash
 java -jar target\numbergenerator-0.0.1-SNAPSHOT.jar
+```
 
 3. Once the Embedded Tomcat and the application starts, the swagger UI can be accessed here:
+```bash
 http://localhost:8080/swagger-ui/index.html#/
+```
 
 4. APIs also will be accessible.
 
 
 ## Running Tests
 
-To run JUNIT tests, under the main project directory, run the following command. This will generate reports under 
+To run JUNIT tests, under the main project directory, run the following command. This will generate reports under <Project Main Dir>\target\surefire-reports
+```bash
 mvn surefire-report:report
+```
 
 Following test Cases are covered both manually as well as part of unit tests:
 1. GET Status with a wrong UUID
